@@ -1,6 +1,5 @@
 ---
 title: 'Probability Distributions'
-author: Bakhomious Basta
 geometry: margin=1in
 fontsize: 12pt
 colorlinks: true
