@@ -63,7 +63,7 @@ $$
 
 ### Law of Total Probability
 
-$\textit{For an event space } \{B_1, B_2, \dots, B_m\} \, \, with P[B_i] > 0 \text{ for all i,}$
+$\text{For an event space } \{B_1, B_2, \dots, B_m\} \, \, \text{with } P[B_i] > 0 \text{ for all i,}$
 
 $$P[A] = \sum_{i=1}^{m} P[A|B_i] \, \,P[B_i]$$
 

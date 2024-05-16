@@ -1,5 +1,5 @@
 ---
-title: 'Data Structures'
+title: 'Basic Data Structures'
 geometry: margin=1in
 fontsize: 12pt
 colorlinks: true
