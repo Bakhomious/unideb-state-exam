@@ -149,7 +149,7 @@ The order in which elements come off a queue gives rise to its alternative name,
 
 The queue has a **head** and a **tail**. When an element is enqueued, it takes its place at the tail of the queue.
 
-![Queue implementation](https://upload.wikimedia.org/wikipedia/commons/5/52/Data_Queue.svg)
+![Queue implementation](imgs/queuerepre.png)
 
 ### Properties
 
@@ -241,15 +241,15 @@ Tree traversal (also known as tree search) is a form of graph traversal and refe
 
 **Inorder Traversal:** visits the node in the order: **Left -> Root -> Right**
 
-![Inorder Traversal](https://media.geeksforgeeks.org/wp-content/uploads/20240429124538/Preorder-Traversal-of-Binary-Tree.webp)
+![Inorder Traversal](imgs/intrav.png)
 
 **Preorder Traversal:** visits the node in the order: **Root -> Left -> Right**
 
-![Preorder Traversal](https://media.geeksforgeeks.org/wp-content/uploads/20240429124832/Inorder-Traversal-of-Binary-Tree.webp)
+![Preorder Traversal](imgs/pretrav.png)
 
 **Postorder Traversal:** visits the node in the order: **Left -> Right -> Root**
 
-![Postorder Traversal](https://media.geeksforgeeks.org/wp-content/uploads/20240429125100/Postorder-Traversal-of-Binary-Tree.webp)
+![Postorder Traversal](imgs/posttrav.png)
 
 ### Types of Trees
 
