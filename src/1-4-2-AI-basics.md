@@ -72,7 +72,6 @@ Variable assignments are commutative. In this search we only need to consider as
 - Total number of nodes generated: $1+b+b^2+b^3+\cdots+b^d=O\left(b^d\right)$
   - All nodes remain in memory, so both time and space complexity are $O(b^d)$.
 - The memory requirements are a bigger problem for breadth-first search than the execution time.
-  - As a typical real-world example, consider a problem with branching factor $b=10$, processing speed 1 million nodes/second, and memory requirements of 1 Kbyte/node. A search to depth $d=10$ would take less than 3 hours, but would require 10 terabytes of memory.
 
 ![BFS Example](imgs/bfsai.png)
 
@@ -120,7 +119,6 @@ $$
 ## Greedy Best-first Search
 
 - A form or best-first search that expands first the node with the lowest $h(n)$ value&mdash;the node that appears to be closest to the goal&mdash;on the grounds that this is likely to lead to a solution quickly.
-- 
 - Complete
   - Can get stuck in loop
   - Complete in finite space with repeated-state checking

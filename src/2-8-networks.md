@@ -178,8 +178,8 @@ The most common example of WAN is the Internet.
     3. Data encapsulation and formatting
     4. Fragmentation and reassembly
     5. Routing
-2. ARP Protocol
-3. ICMP Protocol
+2. ARP (Address Resolution Protocol)
+3. ICMP (Internet Control Message Protocol)
     1. The core responsibility of the ICMP protocol is to report the problems, not correct them. The responsibility of the correction lies with the sender.
     2. ICMP can send the messages only to the source, but not to the intermediate routers because the IP datagram carries the addresses of the source and destination but not of the router that it is passed to.
 
@@ -199,12 +199,12 @@ The two protocols used in the transport layer are **User Datagram protocol (UDP
 
 **The main protocols used in the application layer:**
 
-1. HTTP: This protocol allows us to access the data over the world wide web. It transfers the data in the form of plain text, audio, video.
-2. SNMP: It is a framework used for managing the devices on the internet by using the TCP/IP protocol suite.
-3. SMTP: This protocol is used to send the data to another e-mail address.
-4. DNS: An IP address is used to identify the connection of a host to the internet uniquely. But, people prefer to use the names instead of addresses. Therefore, the system that maps the name to the address is known as Domain Name System.
+1. HTTP (Hypertext Transfer Protocol): This protocol allows us to access the data over the world wide web. It transfers the data in the form of plain text, audio, video.
+2. SNMP (Simple Network Management Protocol): It is a framework used for managing the devices on the internet by using the TCP/IP protocol suite.
+3. SMTP (Simple Mail Transfer Protocol): This protocol is used to send the data to another e-mail address.
+4. DNS (Domain Name System): An IP address is used to identify the connection of a host to the internet uniquely. But, people prefer to use the names instead of addresses. Therefore, the system that maps the name to the address is known as Domain Name System.
 5. TELNET: It establishes the connection between the local computer and remote computer in such a way that the local terminal appears to be a terminal at the remote system.
-6. FTP: A standard internet protocol used for transmitting the files from one computer to another computer.
+6. FTP (File Transfer Protocol): A standard internet protocol used for transmitting the files from one computer to another computer.
 
 ## **Differences between the TCP/IP and OSI model**
 
@@ -233,9 +233,9 @@ Dynamic routing tables update automatically. Dynamic routers use various routing
 ### Main Routing Protocols
 
 1. IP
-2. BGP
-3. OSPF
-4. RIP
+2. BGP (Border Gateway Protoco)
+3. OSPF (Open Shortest Path First)
+4. RIP (Routing Information Protocol )
 
 ## Characterization of the routing categories
 

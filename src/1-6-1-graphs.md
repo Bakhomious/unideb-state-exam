@@ -104,6 +104,8 @@ A graph $G$ is said to be complete if every vertex in $G$ is connected to every 
 
 A graph $T$ is called a *tree* if $T$ is connected and $T$ has no cycles. Examples of trees are shown in Figure 5. A *forest* $G$ is a graph with no cycles; hence the connected components of a forest $G$ are trees. A graph without cycles is said to be *cycle-free*. The tree consisting of a single vertex with no edges is called the *degenerate tree*.
 
+![Tree Graph](imgs/treegraphs.png)
+
 Consider a tree $T$. Clearly, there is only one simple path between two vertices of $T$; otherwise, the two paths would form a cycle. Also:
 
 - Suppose there is no edge $\{u, v\}$ in $T$ and we add the edge $e=\{u, v\}$ to $T$. Then the simple path from $u$ to $v$ in $T$ and $e$ will form a cycle; hence $T$ is no longer a tree.
@@ -125,7 +127,7 @@ This theorem also tells us that a finite tree $T$ with $n$ vertices must have $n
 
 [^3]: In graph theory, a paired graph isn't a standard term. The author of this notes believes it to be equivalent to bipartite graphs.
 
-A graph $G$ is said to be *bipartite* if its vertices $V$ can be partitioned into two subsets $M$ and $N$ such that each edge of $G$ connects a vertex of $M$ to a vertex of $N$. By a complete bipartite graph, we mean that each vertex of $M$ is connected to each vertex of $N$; this graph is denoted by $K_{m, n}$ where $m$ is the number of vertices in $M$ and $n$ is the number of vertices in $N$, and, for standardization, we will assume $m \leq n$. Figure 5 shows the graphs $K_{2,3}, K_{3,3}$, and $K_{2,4}$, Clearly the graph $K_{m, n}$ has $m n$ edges.
+A graph $G$ is said to be *bipartite* if its vertices $V$ can be partitioned into two subsets $M$ and $N$ such that each edge of $G$ connects a vertex of $M$ to a vertex of $N$. By a complete bipartite graph, we mean that each vertex of $M$ is connected to each vertex of $N$; this graph is denoted by $K_{m, n}$ where $m$ is the number of vertices in $M$ and $n$ is the number of vertices in $N$, and, for standardization, we will assume $m \leq n$. Figure 6 shows the graphs $K_{2,3}, K_{3,3}$, and $K_{2,4}$, Clearly the graph $K_{m, n}$ has $m n$ edges.
 
 ![Bipartite Graphs](imgs/bipartite.png)
 
@@ -133,7 +135,7 @@ A graph $G$ is said to be *bipartite* if its vertices $V$ can be partitioned int
 
 A graph $G$ is said to be a *Cycle Graph* if it consists only of a single cycle of vertices and edges. That is, the entire graph is a cycle.
 
-We denote cycle graphs by $C_n$ where $n$ represents the number of vertices of the cycle graph. The cycle graphs $C_4, C_5$, and $C_6$ are shown in Figure 6.
+We denote cycle graphs by $C_n$ where $n$ represents the number of vertices of the cycle graph. The cycle graphs $C_4, C_5$, and $C_6$ are shown in Figure 7.
 
 ![Cycle Graphs](imgs/cyclegraphs.png)
 

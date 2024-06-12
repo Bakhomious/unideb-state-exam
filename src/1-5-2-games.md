@@ -7,7 +7,7 @@ colorlinks: true
 
 ## Two-player Zero-sum Games
 
-Deterministic, two-plater, turn-taking, perfect information and zero-sum games.
+Deterministic, two-player, turn-taking, perfect information (fully observable) and zero-sum games (whatever one player wins, the other loses. Therefore, the player share no common interests.).
 
 - Example: Chess
 
@@ -36,6 +36,8 @@ A game can be formally defined with the following elements:
 - Minimax does, however, serve as a basis for the mathematical analysis of games. By approximating the minimax analysis in various ways, we can derive more practical algorithms.
 
 ![A two-ply game tree. The $\triangle$ nodes are "MAX nodes," in which it is MAX's turn to move, and the $\nabla$ nodes are "MIN nodes." The terminal nodes show the utility values for MAX; the other nodes are labeled with their minimax values. MAX's best move at the root is $a_1$, because it leads to the state with the highest minimax value, and MIN's best reply is $b_1$, because it leads to the state with the lowest minimax value.](imgs/minimax.png)
+
+\pagebreak
 
 ### Alpha-Beta Pruning
 

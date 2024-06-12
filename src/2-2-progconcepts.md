@@ -47,7 +47,7 @@ Those not defined in terms of other data types are called primitive data types. 
 
 They are used to represent switched and flags in programs. The use of Booleans enhances readability.
 
-- One popular exception is *C89*, in which numeric expressions are used as conditionals. In such expressions, all operands with nonzero values are considered true, and zero is considered false.
+- One popular exception is *C*, in which numeric expressions are used as conditionals. In such expressions, all operands with nonzero values are considered true, and zero is considered false.
 
 #### Character Types
 
@@ -58,11 +58,6 @@ Char types are stored as numeric codings (ASCII / Unicode). Traditionally, the m
 #### Character String Types
 
 A character string type is one in which values are sequences of characters.
-
-**Important Design Issues:**
-
-1. Is it a primitive type or just a special kind of array?
-2. Is the length of objects static or dynamic?
 
 - *C* and *C++* use **`char` arrays** to store `char` strings and provide a collection of string operations through a standard library whose header is `string.h`.
 - How is the length of the char string decided?
@@ -84,12 +79,6 @@ A character string type is one in which values are sequences of characters.
 - Pattern matching
 
 In *Java*, strings are supported as a **primitive** type by `String` class
-
-**String Length Options:**
-
-- **Static Length String**: The length can be static and set when the string is created. This is the choice for the **immutable** objects of Java's `String` class as well as similar classes in the *C++* standard class library and the .NET class library available to *C\#*.
-- **Limited Dynamic Length Strings**: Allow strings to have varying length up to a **declared and fixed maximum** set by the variable's definition, as exemplified by the strings in *C*.
-- **Dynamic Length Strings**: Allows strings various length with no maximum. Requires the overhead of dynamic storage allocation and deallocation but provides flexibility. Ex: *Perl* and *JavaScript*.
 
 ### User-Defined Ordinal Types
 

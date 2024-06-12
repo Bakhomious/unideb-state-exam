@@ -25,13 +25,21 @@ Examples of distributions: [Binomial](#binomial-distribution), [Poisson](#poisso
 
 #### Probability Mass Function
 
-Let *X* be a discrete random variable with range $R_X = \{ x1,x2,x3, \dots \}$ (finite or countably infinite). The function
+Let *X* be a discrete random variable with range $R_X = \{ x_1,x_2,x_3, \dots \}$ (finite or countably infinite). The function
 
 $$
 P_X(x_k) = P(X = x_k), \text{ for } k = 1, 2, 3, \dots
 $$
 
 is called the probability mass function (PMF) of $X$.
+
+#### Cumulative Distribution Function
+
+The cumulative distribution function (CDF) of random variable $X$ is defined as 
+
+$$
+F_X(x)=P(X \leq x), \text{for all } x \in \mathbb{R}
+$$
 
 ### Continuous Random Variables
 
@@ -95,6 +103,8 @@ $$
 P_X(k)=\binom{n}{k} p^k(1-p)^{n-k}, \text { for } k=0,1,2, \ldots, n
 $$
 
+![Binomial Distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Binomial_distribution_pmf.svg/300px-Binomial_distribution_pmf.svg.png)
+
 ### Definition
 
 A random variable $X$ is said to be a binomial random variable with parameters $n$ and $p$, shown as $X \sim \operatorname{Binomial}(n, p)$, if its PMF is given by
@@ -108,27 +118,10 @@ where $0<p<1$
 
 Using the *linearity of expectation* we can deduce the expectation of a binomial distribution to be $EX = np$.
 
-$$
-\begin{aligned}
-E X & =E\left[X_1+X_2+\cdots+X_n\right] \\
-& =E X_1+E X_2+\cdots+E X_n \\
-& =p+p+\cdots+p \\
-& =n p
-\end{aligned}
-$$
-
 ### Variance
 
 $$
-\operatorname{Var}\left(X_i\right)=E\left[X_i^2\right]-\left(E X_i\right)^2=1^2 \cdot p+0^2 \cdot(1-p)-p^2=p(1-p)
-$$
-
-Thus,
-$$
-\begin{aligned}
-\operatorname{Var}(X) & =p(1-p)+p(1-p)+\cdots+p(1-p) \\
-& =n p(1-p) .
-\end{aligned}
+\operatorname{Var}(X) =n p(1-p)
 $$
 
 ## Poisson Distribution
@@ -143,65 +136,18 @@ $$
 P_{X}(k)= \begin{cases}\frac{e^{-\lambda} \lambda^{k}}{k !} & \text { for } k \in R_{X} \\ 0 & \text { otherwise }\end{cases}
 $$
 
+![Poisson Distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Poisson_distribution_PMF.png/640px-Poisson_distribution_PMF.png)
+
 ### Expectation
 
 $$
-\begin{aligned}
-E X & =\sum_{x_{k} \in R_{X}} x_{k} P_{X}\left(x_{k}\right) \\
-& =\sum_{k=0}^{\infty} k \frac{e^{-\lambda} \lambda^{k}}{k !} \\
-& =e^{-\lambda} \sum_{k=1}^{\infty} \frac{\lambda^{k}}{(k-1) !} \\
-& =e^{-\lambda} \sum_{j=0}^{\infty} \frac{\lambda^{(j+1)}}{j !} \quad(\text { by letting } j=k-1) \\
-& =\lambda e^{-\lambda} \sum_{j=0}^{\infty} \frac{\lambda^{j}}{j !} \quad\left(\text { Taylor series for } e^{\lambda}\right) \\
-& =\lambda e^{-\lambda} e^{\lambda} \\
-& =\lambda .
-\end{aligned}
+E X = \lambda
 $$
 
 ### Variance
 
 $$
-\begin{aligned}
-\mathrm{E}[X(X-1)] & =\sum_{x=0}^{\infty} x(x-1) \cdot \frac{\lambda^{x} e^{-\lambda}}{x !} \\
-& =\sum_{x=2}^{\infty} x(x-1) \cdot \frac{\lambda^{x} e^{-\lambda}}{x !} \\
-& =e^{-\lambda} \cdot \sum_{x=2}^{\infty} x(x-1) \cdot \frac{\lambda^{x}}{x \cdot(x-1) \cdot(x-2) !} \\
-& =\lambda^{2} \cdot e^{-\lambda} \cdot \sum_{x=2}^{\infty} \frac{\lambda^{x-2}}{(x-2) !} .
-\end{aligned}
-$$
-
-Substituting $z=x-2$, such that $x=z+2$, we get:
-
-$$
-\mathrm{E}[X(X-1)]=\lambda^{2} \cdot e^{-\lambda} \cdot \sum_{z=0}^{\infty} \frac{\lambda^{z}}{z !} .
-$$
-
-Using the power series expansion of the exponential function
-
-$$
-e^{x}=\sum_{n=0}^{\infty} \frac{x^{n}}{n !},
-$$
-
-the expected value of $X(X-1)$ finally becomes
-
-$$
-\mathrm{E}[X(X-1)]=\lambda^{2} \cdot e^{-\lambda} \cdot e^{\lambda}=\lambda^{2} .
-$$
-
-Note that this expectation can be written as
-
-$$
-\mathrm{E}[X(X-1)]=\mathrm{E}\left(X^{2}-X\right)=\mathrm{E}\left(X^{2}\right)-\mathrm{E}(X),
-$$
-
-such that, we have:
-
-$$
-\mathrm{E}\left(X^{2}\right)-\mathrm{E}(X)=\lambda^{2} \Rightarrow \mathrm{E}\left(X^{2}\right)=\lambda^{2}+\lambda .
-$$
-
-The variance of a Poisson random variable finally becomes
-
-$$
-\operatorname{Var}(X)=\lambda^{2}+\lambda-\lambda^{2}=\lambda .
+\operatorname{Var}(X)=\lambda .
 $$
 
 ## Uniform Distribution
@@ -212,32 +158,23 @@ $$
 f_{X}(x)= \begin{cases}\frac{1}{b-a} & a<x<b \\ 0 & x<a \text { or } x>b\end{cases}
 $$
 
+![Uniform Distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Uniform_Distribution_PDF_SVG.svg/640px-Uniform_Distribution_PDF_SVG.svg.png)
+
 ### Expectation
 
 $$
-E X = \int_{a}^{b} \frac{x}{b-a} dx = \frac{1}{b-a}\left[\frac{b^2-a^2}{2}\right] = \frac{a + b}{2}
+E X = \frac{a + b}{2}
 $$
 
 ### Variance
 
 $$
-\begin{aligned}
-E X^{2} & =\int_{-\infty}^{\infty} x^{2} f_{X}(x) d x \\
-& =\int_{a}^{b} x^{2}\left(\frac{1}{b-a}\right) d x \\
-& =\frac{a^{2}+a b+b^{2}}{3} .
-\end{aligned}
-$$
-
-Therefore,
-
-$$
-\begin{aligned}
-\operatorname{Var}(X) & =E X^{2}-(E X)^{2} \\
-& =\frac{(b-a)^{2}}{12} .
-\end{aligned}
+\operatorname{Var}(X) =\frac{(b-a)^{2}}{12}
 $$
 
 ## Exponential Distribution
+
+It is often used to model the time elapsed between events.
 
 A continuous random variable $X$ is said to have an exponential distribution with parameter $\lambda>0$, shown as $X \sim \operatorname{Exponential}(\lambda)$, if its PDF is given by
 
@@ -245,39 +182,23 @@ $$
 f_{X}(x)= \begin{cases}\lambda e^{-\lambda x} & x>0 \\ 0 & \text { otherwise }\end{cases}
 $$
 
+![Exponential Distribution](https://www.probabilitycourse.com/images/chapter4/PDF-Exp_b.png)
+
 ### Expectation
 
 $$
-\begin{aligned}
-E X & =\int_{0}^{\infty} x \lambda e^{-\lambda x} d x \\
-& =\frac{1}{\lambda} \int_{0}^{\infty} y e^{-y} d y \\
-& =\frac{1}{\lambda}\left[-e^{-y}-y e^{-y}\right]_{0}^{\infty} \\
-& =\frac{1}{\lambda} .
-\end{aligned}
+E X =\frac{1}{\lambda}
 $$
 
 ### Variance
 
 $$
-\begin{aligned}
-E X^{2} & =\int_{0}^{\infty} x^{2} \lambda e^{-\lambda x} d x \\
-& =\frac{1}{\lambda^{2}} \int_{0}^{\infty} y^{2} e^{-y} d y \\
-& =\frac{1}{\lambda^{2}}\left[-2 e^{-y}-2 y e^{-y}-y^{2} e^{-y}\right]_{0}^{\infty} \\
-& =\frac{2}{\lambda^{2}} .
-\end{aligned}
-$$
-
-Thus, we obtain
-
-$$
-\operatorname{Var}(X)=E X^{2}-(E X)^{2}=\frac{2}{\lambda^{2}}-\frac{1}{\lambda^{2}}=\frac{1}{\lambda^{2}} .
-$$
-
-$$
-\text { If } X \sim \text { Exponential }(\lambda) \text {, then } E X=\frac{1}{\lambda} \text { and } \operatorname{Var}(X)=\frac{1}{\lambda^{2}} \text {. }
+\operatorname{Var}(X)=\frac{1}{\lambda^{2}} .
 $$
 
 ## Normal Distribution
+
+A normal distribution, also called a Gaussian distribution, is a way of describing data that is symmetrical and bell-shaped.  Imagine a bunch of measurements of people's heights.  There will be more people around the average height, and fewer people who are very short or very tall.  This pattern can be perfectly described by a normal distribution.
 
 We say a random variable has a normal distribution $X \sim \operatorname{N}(\mu, \sigma^2)$ if its PDF is given by: 
 

@@ -138,21 +138,21 @@ void insertionSort(int arr[], int n)
 
 ### Upper Bound - The $O$-notation
 
-For a given function $g(n)$, we denote by $O(g(n))$ the set of functions
+Represents the worst case. For a given function $g(n)$, we denote by $O(g(n))$ the set of functions
 
 $O(g(n)) = \{f(n) : \text{there exist positive constants } c \text{ and } n_0 \text{ such that }$ 
 $0 \leq f(n) \leq cg(n) \text{ for all } n \geq n_0 \}$
 
 ### Lower Bound - The $\Omega$-notation
 
-For a given function $g(n)$, we denote by $O(g(n))$ the set of functions
+Represents the best case. For a given function $g(n)$, we denote by $O(g(n))$ the set of functions
 
 $O(g(n)) = \{f(n) : \text{there exist positive constants } c \text{ and } n_0 \text{ such that }$ 
 $0 \leq c\,g(n) \leq f(n) \text{ for all } n \geq n_0 \}$
 
 ### The $\Theta$-notation
 
-For a given function $g(n)$, we denote by $\Theta(g(n))$ the set of functions
+Represents the average case. For a given function $g(n)$, we denote by $\Theta(g(n))$ the set of functions
 
 $\Theta(g(n)) = \{f(n) : \text{there exist positive constants } c_1, c_2 \text{ and } n_0 \text{ such that }$ 
 $0 \leq c_1g(n) \leq f(n) \leq c_2g(n) \text{ for all } n \geq n_0 \}$
@@ -216,7 +216,7 @@ a table is a collection of data elements, whose complex elements contain:
 #### The Division Method
 
 - In the division method for creating hash functions, we map a key $\mathrm{k}$ into one of $\mathrm{m}$ slots by taking the remainder of $\mathrm{k}$ divided by $\mathrm{m}$.
-- The hash function is $h(k)=k$ mod $m$.
+- The hash function is $h(k)=k \operatorname{mod} m$.
 - For example, if the hash table has size $m=12$, then the possible hash values are between 0 and 11 .
 - If the hash table has size $m=12$ and the key is $k=100$, then $h(k)=4$.
 
@@ -233,6 +233,7 @@ a table is a collection of data elements, whose complex elements contain:
 - When searching for an element, we systematically examine table slots until either we find the desired element or we have ascertained that the element is not in the table.
 - No lists and no elements are stored outside the table, unlike in chaining.
 - The advantage of open addressing is that it avoids pointers altogether.
+- Uses linear probing, quadratic probing and double hashing.
 
 ----
 
@@ -320,3 +321,5 @@ The overhead for initialization is $\mathcal{O}(|V|)$, the total time spent in s
 - Uses a Stack to manage the set of gray vertices.
 
 The total running time of the DFS procedure is also $\mathcal{O}(|V|+|E|)$
+
+![Depth-first Search](https://he-s3.s3.amazonaws.com/media/uploads/9fa1119.jpg)

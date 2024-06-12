@@ -330,75 +330,15 @@ Conceptual database design is the process of identifying the essential data elem
 
 ## ER-to-Relational Mapping
 
-Consider the ER-Diagram in Figure 8
+The process of converting an ER diagram into a relational schema involves:
 
-![ER Diagram Example](imgs/exampleerd.png)
+- Mapping Entity Sets: Each entity set becomes a table.
+- Mapping Attributes: Attributes become columns in the respective tables.
+- Mapping Relationships: Foreign keys are used to represent relationships between tables.
 
-### Step 1
+![ER-to-Relational Mapping](https://dextutor.com/wp-content/uploads/2019/09/image-25.png)
 
-- Figure out all the regular/strong entity from the diagram and then create a corresponding relation(table) that includes all the simple attributes.
-- Choose one of the attributes as a primary key. If composite, the simple attributes together form the primary key.
-
-For the given ER-Diagram (Figure 8) we have *Employee*, *Department* and *Project* as strong/regular entity, as they are enclosed in single rectangle.
-
-![After Step 1](imgs/step1.png)
-
-### Step 2 
-
-- Figure out the weak entity types from the diagram and create a corresponding relation (table) that includes all its simple attributes.
-- Add as foreign key all of the primary key attributes in the entity corresponding to the owner entity.
-The primary key is a combination of all the primary key attributes from the owner and the primary key of the weak entity.
-
-For the given ER-Diagram (Figure 8) we have *Dependent* as a weak entity, as it is enclosed in a double rectangle that is indicative of an entity being weak.
-
-![After Step 2](imgs/step2.png)
-
-### Step 3
-
-- We need to figure out the entities from ER diagram for which there exists a 1-to-1 relationship.
-- The entities for which there exists a 1-to-1 relationship, choose one relation(table) as S, the other as $\mathrm{T}$.
-
-    Better if $\mathrm{S}$ has total participation (reduces the number of NULL values).
-
-- Then we need to add to $S$ all the simple attributes of the relationship if there exists any.
-- After that, we add as a foreign key in S the primary key attributes of T.
-
-For the given ER-Diagram (Figure 8) there exists a 1-to-1 relationship between *Employee* and *Department* entity. Here *Department* has total participation therefore consider it as relation $\mathrm{S}$ and *Employee* as relation T.
-
-![After Step 3](imgs/step3.png)
-
-### Step 4
-
-- Now we need to figure out the entities from ER diagram for which there exists a 1-to-N relationship.
-- The entities for which there exists a 1-to-N relationship, choose a relation as $\mathrm{S}$ as the type at $\mathrm{N}$-side of relationship and other as $\mathrm{T}$.
-- Then we add as a foreign key to $\mathrm{S}$ all of the primary key attributes of $\mathrm{T}$.
-
-In the given ER diagram (Figure 8) there are two 1-to-N relationships that exists between *Employee-Department* and *Employee-Dependent* entity.
-
-![After Step 4](imgs/step4.png)
-
-### Step 5
-
-- Now we need to figure out the entities from ER diagram for which there exists an M-to-N relationship.
-- Create a new relation (table) S.
-- The primary keys of relations(tables) between which M-to-N relationship exists, are added to the new relation $S$ created, that acts as a foreign key.
-- Then we add any simple attributes of the M-to-N relationship to S.
-
-For the given ER-Diagram (Figure 8) there exists M-to-N relationship between *Employee* and *Project* entity. The new table `WORKS_ON` is created for mapping the relationship between *Employee* and *Project* relation (table). (Figure 13)
-
-![After Step 5](imgs/step5.png)
-
-### Step 6
-
-- Now identify the relations(tables) that contain multi-valued attributes.
-- Then we need to create a new relation $\mathrm{S}$
-- In the new relation $S$ we add as foreign keys the primary keys of the corresponding relation.
-- Then we add the multi-valued attribute to $S$; the combination of all attributes in S forms the primary key.
-
-For the given ER-Diagram (Figure 8) there exists a multi-valued attribute *(Locations)* in *Department* relation(table). So, we create a new relation called `DEPT_LOCATIONS`. To this new relation we add the primary key of *Department* Table that is `DNumber` and the multi-valued attribute Locations (Figure 14).
-
-![After Step 6](imgs/step6.png)
-
+----
 
 ## SQL
 
@@ -437,7 +377,7 @@ Structured query language (SQL) is a programming language for storing and proces
 ### DCL (Data Control Language)
 
 DCL includes commands such as `GRANT` and `REVOKE` which mainly deal with the rights, permissions, and other controls of the database system.
-`
+
 ### Simple Queries
 
 Simple queries will display data from a few tables. An SQL query consists of three pieces, or blocks:

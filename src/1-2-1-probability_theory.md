@@ -109,45 +109,6 @@ If $n \geq 3$, the sets $A_1, A_2, \dots,A_n$  are independent if and only if
 
 ---
 
-## **Fundamental Principle of Counting**
-
-If subexperiment *A* has *n* possible outcomes, and subexperiment *B* has *k* possible outcomes, then there are *nk* possible outcomes when you perform both subexperiments.
-
-### Theorem
-
-The number of *k*-permutations of *n* distinguishable objects is
-
-$$(n)_k = \frac{n!}{(n-k)!}$$
-
-## Sample without Replacement
-
-### Theorem
-
-The number of ways to choose **k** objects out of **n** distinguishable objects is
-
-$$
-{n \choose k} = {n \choose n-k}
-$$
-
-$\text{n choose k}$
-
-$\text {For an integer} \geq 0 \text{, we define}$
-
-$$
-{n \choose k} = \begin{cases}
-{\frac{n!}{k!(n-k)!}} \quad k = 0,1, \dots, n\\
-0 \quad \quad \quad \quad \text{otherwise.}
-\end{cases}
-$$
-
-## Sample with Replacement
-
-### Theorem
-
-Given *m* distinguishable objects, there are $m^n$ ways to choose with replacement an ordered sample of *n* objects.
-
----
-
 ## Permutations:
 
 **Definition:** An ordered sequence of *n* distinguishable objects is called an *n*-permutation.
@@ -165,7 +126,7 @@ $$
 X = \frac{n!}{h!k!m!}
 $$
 
-## Ordered Selections
+## Selections (Variations)
 
 ### Without Replacement
 
@@ -191,17 +152,6 @@ $$ {n \choose k} \text{, where }{n \choose k} = \frac{n!}{k!(n-k)!}$$
 
 **Theorem:** The number of ways to choose *k* objects out of *n* distinguishable objects when we replace the chosen elements is
 $${n+k-1 \choose k}$$
-
-## Binomial Theorem
-
-$$
-(a+b)^n = \sum^{n}_{k=0} {n \choose k} a^{n-k}b^k = {n \choose 0}a^nb^0 + {n \choose 1}a^{n-1}b^1 + \dots + {n \choose n} a^0b^n.
-$$
-The binomial coefficients are contained in the Pascal triangle. 
-**Remark:** The rule of the Pascal triangle is
-$$
-{n+1 \choose k+1} = {n \choose k+1} + {n \choose k}
-$$
 
 ## Number of Subsets
 

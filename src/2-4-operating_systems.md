@@ -37,7 +37,7 @@ A common definition, and the one that we usually follow, is that the operating s
 
 ![MS-DOS Layer Structure](imgs/msdos.png)
 
-In *MS-DOS*, the interfaces and levels of functionality are not well separated. For instance, application programs are able to access the basic I/O routines to write directly to the display and disk drives. Such freedom leaves *MS-DOS* vulnerable to errant (or malicious) programs, causing entire system crashes when user programs fail. Of course, *MS-DOS* was also limited by the hardware of its era. Because the Intel 8088 for which it was written provides no dual mode and no hardware protection, the designers of *MS-DOS* had no choice but to leave the base hardware accessible.
+In *MS-DOS*, the interfaces and levels of functionality are not well separated. For instance, application programs are able to access the basic I/O routines to write directly to the display and disk drives. Such freedom leaves *MS-DOS* vulnerable to errant (or malicious) programs, causing entire system crashes when user programs fail. Of course, *MS-DOS* was also limited by the hardware of its era.
 
 Another example of limited structuring is the original *UNIX* operating system. Like *MS-DOS*, *UNIX* initially was limited by hardware functionality. It consists of two separable parts: the kernel and the system programs. The kernel is further separated into a series of interfaces and device drivers, which have been added and expanded over the years as UNIX has evolved. We can view the traditional UNIX operating system as being layered to some extent, as shown in Figure 2. Everything below the system-call interface and above the physical hardware is the kernel. The kernel provides the file system, CPU scheduling, memory management, and other operating-system functions through system calls. Taken in sum, that is an enormous amount of functionality to be combined into one level. This monolithic structure was difficult to implement and maintain. It had a distinct performance advantage, however: there is very little overhead in the system call interface or in communication within the kernel. We still see evidence of this simple, monolithic structure in the UNIX, Linux, and Windows operating systems.
 
@@ -117,16 +117,6 @@ Computers can be simultaneously shared by users this functionality is provided b
 The amount of CPU time allotted to each process is divided when a user performs multiple tasks.
 
 Each process can only run for a set amount of time at once. The minimum time quantum is between 10 and 100 milliseconds. Time slot or time slice are other names for time quantum.
-
-Let’s take an example to understand how the time sharing operating system work.
-
-- Four processes P1, P2, P3, and P4 are running on the operating system.
-- Let’s assume we have a fixed quantum time for each process is 5 nanoseconds. Now, we will see how all the processes will execute.
-- First, process P1 will be executed for 5 nanoseconds.
-- After 5 nanoseconds of process P1 are completed, process P2 will be executed for the next 5 nanoseconds.
-- After 5 nanoseconds of process P2 are completed, process P3 will be executed for the next 5 nanoseconds.
-- After 5 nanoseconds of process P3 are completed, process P4 will be executed for the next 5 nanoseconds.
-- The above process will continue until all processes are completed.
 
 ![Time Sharing Operating System](https://prepbytes-misc-images.s3.ap-south-1.amazonaws.com/assets/1678856275139-1-02%20%289%29.png)
 
@@ -233,7 +223,11 @@ The three streams actually have numbers associated with them (in brackets in the
 
 ### Piping
 
-A mechanism for sending data from one program to another is called **piping** and the operator we use is ( `|` ). What this operator does is feed the output from the program on the left as input to the program on the right.  
+A mechanism for sending data from one program to another is called **piping** and the operator we use is ( `|` ). What this operator does is feed the output from the program on the left as input to the program on the right.
+
+```bash
+ls | grep file.txt
+```
 
 ## Process, Process Management
 
@@ -250,19 +244,23 @@ A process is a program in execution. For example, when we write a program in *C*
 
 ![Process](https://cdn-images-1.medium.com/max/900/1*6vsoP1cWzQkN95AlEt2WoA.jpeg)
 
+#### Thread
+
+A thread is the unit of execution within a process. A process can anywhere from just one thread to many threads.
+
 ### Process Management
 
-If the operating system supports multiple users then services under this are very important. In this regard, operating systems have to keep track of all the completed processes, Schedule them, and dispatch them one after another. However, the user should feel that he has full control of the CPU. Process management refers to the techniques and strategies used by organizations to design, monitor, and control their business processes to achieve their goals efficiently and effectively. It involves identifying the steps involved in completing a task, assessing the resources required for each step, and determining the best way to execute the task.
+Process management within operating systems involves a set of methodologies and protocols dedicated to overseeing the creation, scheduling, and termination of processes. It encompasses activities such as process creation, planning, termination, and resource allocation. Through techniques like process mapping, analysis, and optimization, operating systems ensure efficient CPU utilization, minimize response times, and maintain system stability. Process management is fundamental to maintaining system performance and ensuring users perceive seamless control over CPU resources.
 
-Process management can help organizations improve their operational efficiency, reduce costs, increase customer satisfaction, and maintain compliance with regulatory requirements. It involves analyzing the performance of existing processes, identifying bottlenecks, and making changes to optimize the process flow.
+Some process management examples are: Eliminate redundant processes, automate workflows and Improve communication between multiple processes with appropriate business tools.
 
-#### Key Components
+**The operating system is responsible for the following activities in connection with process management:**
 
-- **Process mapping:** Creating visual representations of processes to understand how tasks flow, identify dependencies, and uncover improvement opportunities.
-- **Process analysis:** Evaluating processes to identify bottlenecks, inefficiencies, and areas for improvement.
-- **Process redesign:** Making changes to existing processes or creating new ones to optimize workflows and enhance performance.
-- **Process implementation:** Introducing the redesigned processes into the organization and ensuring proper execution.
-- **Process monitoring and control:** Tracking process performance, measuring key metrics, and implementing control mechanisms to maintain efficiency and effectiveness.
+- Scheduling processes and threads on the CPUs
+- Creating and deleting both user and system processes
+- Suspending and resuming processes
+- Providing mechanisms for process synchronization
+- Providing mechanisms for process communication
 
 ## Signals
 

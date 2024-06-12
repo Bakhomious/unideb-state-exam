@@ -90,6 +90,8 @@ $$
 c_{i j}=\sum_{r=1}^{k} a_{i r} b_{r j}
 $$
 
+![Matrix Multiplication](https://miro.medium.com/v2/resize:fit:2000/1*HjcZkViYtPKg-Wm2o7DFDg.png)
+
 #### Properties of matrix multiplication
 
 - If $A$ is an $m \times n$ matrix, then $I_{m} \cdot A=A$ and $A \cdot I_{n}=A$.
@@ -331,6 +333,11 @@ Hence, in the case of $A \in \mathbb{R}^{m \times n}$ the function $\varphi(u)=A
 When $A \in \mathbb{R}^{n \times n}$, then $\varphi(u)=A u$ is a linear transformation.
 
 Remark: linear maps map the zero vector to the zero vector.
+
+Linear transformation $T : R^n \rightarrow R^m$ is a function that maps vectors from an n-dimensional space to an m-dimensional space in a way that preserves vector addition and scalar multiplication. In simpler terms, it transforms vectors in a consistent linear manner.
+
+- **1D Transformations**: A scalar a scales the length of intervals. Positive a preserves orientation; negative a reverses it.
+- **2D Transformations**: A 2×2 matrix transforms the plane, scaling areas and potentially changing orientation.
 
 ----
 

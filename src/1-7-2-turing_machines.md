@@ -150,7 +150,7 @@ The following properties hold: $N \cap T=\emptyset$ and $S \in N$.
 
 Let us denote the union of the sets $N$ and $T$ by $V(V=N \cup T)$.
 
-Then, the form of the production $\underset{18}{ }$ rules is $V^{*} N V^{*} \rightarrow V^{*}$.
+Then, the form of the production rules is $V^{*} N V^{*} \rightarrow V^{*}$.
 
 ### Derivation &mdash; Definition
 

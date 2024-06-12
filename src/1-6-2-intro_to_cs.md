@@ -147,35 +147,9 @@ In order to understand the operating principle of the pushdown automaton, we hav
 
 The pushdown automaton accepts words over the alphabet $T$. At the beginning the PDA is in state $q_0$, we can read the first letter of the input word, and the stack contains only $z_0$. In each step, we use the transition function to change the state and the stack of the PDA. The PDA accepts the input word, if and only if it can read the whole word, and it is in a final state when the end of the input word is reached.
 
-More formally, in each step, the pushdown automaton has a configuration - also called instantaneous description - $(q, v, w)$, where $q \in Q$ is the current state, $v \in T^*$ is the unread part of the input word, and $w \in Z^*$ is the whole word contained by the stack. At the beginning, the pushdown automaton is in its initial configuration: $\left(q_0, p, z_0\right)$, where $p$ is the whole input word. In each step, the pushdown automaton changes its configuration, while using the transition function. There are two different kinds of steps, the first is the standard, the second is the so called $\lambda$-step.
+Consider reading the word: aabbcccddd in Figure 2
 
-(1) The standard step is when the PDA reads its current state, current input letter, the top stack symbol, it finds an appropriate transition rule, it changes its state, it moves to the next input letter and changes the top symbol of the stack to the appropriate word. Formally, we can say the PDA can change its configuration from $\left(q_1, a v, z w\right)$ to $\left(q_2, v, r w\right)$ in one step, if it has a transition rule $\left(q_2, r\right) \in \delta\left(q_1, a, z\right)$, where $q_1, q_2 \in Q, a \in T, z \in Z, v \in T^*$, $w \in Z^*$. Denote this transition $\left(q_1, a v, z w\right) \vdash_{P D A}\left(q_2, v, r w\right)$.
+![Pushdown Automata Example](imgs/pushdownexample.png)
 
-(2) The $\lambda$-step is when the PDA reads its current state, it does not read any input letters, it reads the top stack symbol, it finds an appropriate transition rule, and it changes its state, it does not move to the next input letter and it changes the top letter of the stack to the given word. Formally, we can say again that the PDA can change its configuration from $\left(q_1, v, z w\right)$ to $\left(q_2, v, r w\right)$ in one step, if it has a transition rule $\left(q_2, r\right) \in \delta\left(q_1, \lambda, z\right)$, where $q_1, q_2 \in Q, z \in Z, v \in T^*$, and $w \in Z^*$. Denote this transition $\left(q_1, v, z w\right) \vdash_{P D A}\left(q_2, v, r w\right)$.
-
-We can say that the PDA can change its configuration from $\left(q_1, v, w\right)$ to $\left(q_2, x, y\right)$ in finite many steps, if there are configurations $C_0, C_1, \ldots, C_n$ such that $C_0=\left(q_1, v, w\right), C_n=\left(q_2, x, y\right)$, and $C_i \vdash_{P D A} C_{i+1}$ holds for each integer $0 \leq i<n$. Denote this transition $\left(q_1, v, w\right) \vdash_{P D A}^*\left(q_2, x, y\right)$.
-
-### The language accepted by the pushdown automaton
-
-$L(P D A)=\left\{p \mid p \in T^{*},\left(q_{0}, p, z_{0}\right) \vdash_{P D A}^{*}\left(q_{f}, \lambda, y\right), q_{f} \in F, y \in Z^{*}\right\}$
-
-### Acceptance by Empty Stack
-
-There is another method for accepting words with a pushdown automaton. It is called "acceptance by empty stack". In this case, the automaton does not have any final states, and the word is accepted by the pushdown automaton if and only if it can read the whole word and the stack is empty when the end of the input word is reached. More formally:
-
-\pagebreak
-
-### Definition
-
-The language accepted by automaton
-
-$$
-P D A_{e}=\left(Q, T, Z, q_{0}, z_{0}, \delta\right)
-$$
-
-by empty stack is
-
-$$
-L\left(P D A_{e}\right)=\left\{p \mid p \in T^{*},\left(q_{0}, p, z_{0}\right) \vdash_{P D A_{e}}^{*}(q, \lambda, \lambda), q \in Q\right\} .
-$$
-
+![](imgs/pushdownstep1.png)
+![](imgs/pushdownstep2.png)

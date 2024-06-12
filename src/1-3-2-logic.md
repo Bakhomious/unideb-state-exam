@@ -5,6 +5,44 @@ fontsize: 12pt
 colorlinks: true
 ---
 
+## Simply, What is First Order Logic?
+
+First-order logic is a way of writing and understanding statements about objects and their relationships. It's like a very precise language that helps us describe things clearly and reason about them.
+
+**Why Do We Need It?**
+
+We need first-order logic to:
+
+1. **Make clear statements**: It helps us avoid confusion by being very specific about what we mean.
+2. **Solve problems**: It allows us to make logical conclusions and solve problems systematically.
+3. **Understand relationships**: It helps us describe how different things are connected or related.
+
+### Imagine you have a box of toys, and you want to say things about the toys. First-order logic gives you a special way to talk about the toys and their properties.
+
+**Basic Ideas:**
+
+- **Objects**: Think of objects as your toys (like a teddy bear, a toy car, and a doll).
+- **Properties**: These are things you can say about your toys (like "is red," "has wheels," or "can talk").
+- **Relationships**: These are ways your toys can be connected (like "is next to," "is bigger than," or "loves").
+
+**Using First-Order Logic:**
+
+1. **Names**: We use names to refer to specific toys (like calling the teddy bear "Teddy").
+2. **Properties**: We use special words to talk about properties. For example:
+    - "Teddy is brown" can be written as Brown(Teddy).
+3. **Relationships**: We use special words for relationships. For example:
+    - "Teddy loves Doll" can be written as Loves(Teddy,Doll).
+4. **Quantifiers**:
+    - **Everyone**: If you want to say something about all your toys, you use "everyone" (or "all"). For example, "All toys are fun" can be written as $\forall$x(Toy(x)$\rightarrow$Fun(x)).
+    - **Someone**: If you want to say something about at least one toy, you use "someone" (or "some"). For example, "Some toy is red" can be written as $\exists$x(Toy(x)$\wedge$Red(x)).
+
+**Relating to Real Life:**
+
+1. **School**: Think about your classmates. If you want to say "Every student likes recess," you can use first-order logic to write that clearly.
+2. **Games**: When playing a game, you can use first-order logic to describe rules. For example, "If a player scores, they get a point."
+
+By using first-order logic, you can clearly and precisely describe things in a way that makes it easy to understand and reason about the world around you.
+
 ## First-order Language: The Language of Predicate Logic
 
 **Definition 1:**
@@ -57,6 +95,29 @@ Let $L^{(1)}=\langle LC, Var, \text {Con, Term, Form}\rangle$ be a language of f
 
 ## Syntactical Properties of Variables: Free and Bound Variables
 
+Two different uses of variables in first-order formulae:
+1. Free variables: used to denote unknown or unspecified objects, as in $(x>5) \vee\left(x^2+x-2=0\right)$.
+2. Bound variables: used to quantify, as in
+$$
+\exists x\left(x^2+x-\mathbf{2}=\mathbf{0}\right) \text { and } \forall x\left(x>\mathbf{5} \rightarrow x^2+x-\mathbf{2}>\mathbf{0}\right) \text {. }
+$$
+
+Scope of (an occurrence of) a quantifier in a formula $A$ : the unique subformula $Q \times B$ beginning with that occurrence of the quantifier.
+An occurrence of a variable $x$ in a formula $A$ is bound if it is in the scope of some occurrence of a quantifier $Q x$ in $A$. Otherwise, that occurrence of $x$ is free. A variable is free (bound) in a formula, if it has a free (bound) occurrence in it. For instance, in the formula
+$$
+A=(x>\mathbf{5}) \rightarrow \forall y(y<\mathbf{5} \rightarrow(y<x \wedge \exists x(x<3))) .
+$$
+the first two occurrences of $x$ are free, while all other occurrences of variables are bound. Thus, the only free variable in $A$ is $x$, while both $x$ and $y$ are bound in $A$.
+
+### A simplified example:
+
+Imagine you have some toys, and you label them with names. Let's think about how you might use those names when talking about the toys.
+
+- **Free Occurrence**: When you mention a toy's name directly without any special rules.
+    - Example: Saying "x is red" means you are directly talking about the toy named "x."
+- **Bound Occurrence**: When you mention a toy's name but with a rule that applies to all toys or some toys.
+    - Example: Saying "For every x, x is red" means you're talking about all toys being red, not just the toy named "x."
+
 **Definition:**
 
 Let $L^{(1)}=\langle LC, Var, \text {Con, Term, Form}\rangle$ be a first order language and $A \in$ Form be a formula. The set of free variables of the formula $A$ (in notation: $\operatorname{FreeVar}(A)$) is given by the following inductive definition:
@@ -107,6 +168,55 @@ Let $L^{(1)}=\langle LC, Var, \text {Con, Term, Form}\rangle$ be a first order l
 
 ## Interpretation and Assignment in First-order Logic
 
+### Interpretations
+
+**Interpretations** provide the meaning for the symbols used in a first-order logic formula. An interpretation consists of a domain of discourse and an assignment of meanings to the non-logical symbols (constants, function symbols, and predicates) in the formula.
+
+### Components of an Interpretation:
+
+1. **Domain of Discourse (D)**: A non-empty set of objects that the variables can refer to.
+2. **Interpretation of Constants**: Each constant symbol is assigned a specific object in the domain.
+    - Example: If $a$ is a constant, it might be assigned to a particular object in the domain $D$.
+3. **Interpretation of Function Symbols**: Each n-ary function symbol is assigned an n-ary function from the domain to the domain.
+    - Example: If f is a unary function, it might be interpreted as a function $f:D\rightarrow D$.
+4. **Interpretation of Predicate Symbols**: Each n-ary predicate symbol is assigned an n-ary relation over the domain.
+    - Example: If P is a binary predicate, it might be interpreted as a relation $P \subseteq D \times D$.
+
+### Variable assignment
+
+A **variable assignment** is a function that assigns values from the domain of discourse to the variables in a formula. This helps to evaluate the truth of formulas involving variables under a given interpretation.
+
+**How Variable Assignment Works:**
+
+- Suppose we have a variable assignment $\sigma$:
+    - $\sigma(x)$ assigns a value from the domain D to the variable x.
+    - For example, if the domain D is the set of natural numbers {1,2,3,…}, and $\sigma(x)=3$, then x is assigned the value 3.
+
+#### Example
+
+Consider a domain $D=\{1,2,3\}$.
+
+Interpretation:
+
+- Constants: $a \rightarrow 1$
+- Functions: $f \rightarrow$ the function defined by $f(x)=x+1$ (assuming we interpret addition in a natural way)
+- Predicates: $P \rightarrow\{(1),(2)\}$ (meaning $P(x)$ is true if $x$ is 1 or 2 )
+
+Variable Assignment:
+
+- $\sigma(x)=2$
+
+Formula Evaluation:
+
+- Atomic Formula: $P(x)$
+- Check $P(\sigma(x))$ : Since $\sigma(x)=2$, and 2 is in the set $\{1,2\}, P(x)$ is true.
+- Quantified Formula: $\forall x P(x)$
+- Check $P(x)$ for all $x$ in $D$ :
+- $x=1: P(1)$ is true.
+- $x=2: P(2)$ is true.
+- $x=3: P(3)$ is false.
+- Since $P(3)$ is false, $\forall x P(x)$ is false.
+
 The concept of interpretation is a crucial component of the semantics of any logical system. It shows the possibilities how to gives 'meanings' (semantic values) to parameters (nonlogical constants). In first-order logic
 
 - name parameters (members of $\mathcal{F}(0))$ represent proper names;
@@ -140,51 +250,11 @@ The function $v$ is an assignment relying on the interpretation $\langle U, \rho
 **Definition:** (Modified assignment)
 
 Let $v$ be an assignment relying on the interpretation $\langle U, \rho\rangle, x \in V a r$ and $u \in U$.
+
 $$
 v[x: u](y)= \begin{cases}u, & \text { if } y=x ; \\ v(y), & \text { otherwise. }\end{cases}
 $$
 for all $y \in V a r$.
-
-----
-
-**Definition:** (Semantic rules)
-
-Let $\langle U, \rho\rangle$ be a given interpretation and $v$ be an assignment relying on $\langle U, \rho\rangle$.
-
-1. If $a \in \mathcal{F}(0)$, then $|a|_v^{\langle U, \rho\rangle}=\rho(a)$.
-2. If $x \in V a r$, then $|x|_v^{\langle U, \rho\rangle}=v(x)$.
-3. If $f \in \mathcal{F}(n),(n=1,2, \ldots)$, and $t_1, t_2, \ldots, t_n \in$ Term, then $\left|f\left(t_1\right)\left(t_2\right) \ldots\left(t_n\right)\right|_v^{\langle U, \rho\rangle}=\rho(f)\left(\left\langle\left|t_1\right|_v^{\langle U, \rho\rangle},\left|t_2\right|_v^{\langle U, \rho\rangle}, \ldots,\left|t_n\right|^{\langle U, \rho\rangle_v}\right)\right.$
-4. If $p \in \mathcal{P}(0)$, then $|p|_v^{\langle U, \rho\rangle}=\rho(p)$
-5. If $t_1, t_2 \in$ Term, then $\left|\left(t_1=t_2\right)\right|_v^{\langle U, \rho\rangle}= \begin{cases}1, & \text { if }\left|t_1\right|_v^{\langle U, \rho\rangle}=\left|t_2\right|_v^{\langle U, \rho\rangle} \\ 0, & \text { otherwise. }\end{cases}$
-6. If $P \in \mathcal{P}(n)(n \neq 0), t_1, \ldots, t_n \in$ Term,
-   
-   then $\left|P\left(t_1\right) \ldots\left(t_n\right)\right|_v^{\langle U, \rho\rangle}= \begin{cases}1, & \text { if }\left\langle\left|t_1\right| v_v^{\langle U, \rho\rangle}, \ldots,\left|t_n\right|_v^{\langle U, \rho\rangle}\right\rangle \in \rho(P) ; \\ 0, & \text { otherwise. }\end{cases}$
-7. If $A \in$ Form, then $|\neg A|_v^{\langle U, \rho\rangle}=1-|A|_v^{\langle U, \rho\rangle}$.
-8.  If $A, B \in$ Form, then
-    $$
-    \begin{gathered}
-    |(A \supset B)|_v^{\langle U, \rho\rangle}= \begin{cases}0 & \text { if }|A|_v^{\langle U, \rho\rangle}=1, \text { and }|B|_v^{\langle U, \rho\rangle}=0 ; \\
-    1, & \text { otherwise. }\end{cases} \\
-    |(A \wedge B)|_v^{\langle U, \rho\rangle}= \begin{cases}1 & \text { if }|A|_v^{\langle U, \rho\rangle}=1, \text { and }|B|_v^{\langle U, \rho\rangle}=1 ; \\
-    0, & \text { otherwise. }\end{cases} \\
-    |(A \vee B)|_v^{\langle U, \rho\rangle}= \begin{cases}0 & \text { if }|A|_v^{\langle U, \rho\rangle}=0, \text { and }|B|_v^{\langle U, \rho\rangle}=0 ; \\
-    1, & \text { otherwise. }\end{cases} \\
-    |(A \equiv B)|_v^{\langle U, \rho\rangle}= \begin{cases}1 & \text { if }|A|_v^{\langle U, \rho\rangle}=|B|_v^{\langle U, \rho\rangle}=0 ; \\
-    0, & \text { otherwise. }\end{cases}
-    \end{gathered}
-    $$
-9.  If $A \in$ Form, $x \in V a r$, then
-
-$$
-\begin{aligned}
-& |\forall x A|_v^{\langle U, \rho\rangle}= \begin{cases}0, & \text { if there is an } u \in U \text { such that }|A|_{v[x: u]}^{\langle U, \rho\rangle}=0 ; \\
-1, & \text { otherwise. }\end{cases} \\
-& |\exists x A|_v^{\langle U, \rho\rangle}= \begin{cases}1, & \text { if there is an } u \in U \text { such that }|A|_{v[x: u]}^{\langle U, \rho\rangle}=1 ; \\
-0, & \text { otherwise. }\end{cases}
-\end{aligned}
-$$
-
-The semantic value of an expression belonging to the set $\text{Term} \cup \text{Form}$ depends on the given interpretation and assignment, therefore the precise notation is the following: $|\langle\text {expression}\rangle|_v^{\langle U, \rho\rangle}$.
 
 ----
 
@@ -297,24 +367,25 @@ The formula $A$ is prenex if
 
 ## Sequent calculus
 
-Truth tables can be used to determine valid formulas, but if we have too many non-logical constants, it is hard to construct these tables, even for computers. Let's consider a method based on syntax.
-
 **Definition:**
 
-If $\Gamma$ and $\Delta$ are two-possibly empty—set of formulae, then $\Gamma \vdash \Delta$ is a sequent.
+Logical calculus is a formal system used to derive logical conclusions from premises through a series of rules and logical operations. It consists of:
 
-The axioms of the sequent calculus are $\Gamma \cup\{A\} \vdash \Delta \cup\{A\}$, where $A$ is an atomic formula, $\Gamma$ and $\Delta$ are set of formulae.
+- **Syntax**: The formal structure of expressions, including variables, constants, functions, predicates, connectives (like $\wedge, \vee, \rightarrow, \leftrightarrow \neg$), and quantifiers ($\forall, \exists$).
+- **Inference Rules**: The logical rules that dictate how new statements (conclusions) can be derived from existing statements (premises).
 
-Let $S$ be the sequent $\Gamma \vdash \Delta$, where $\Gamma=\left\{A_1, \ldots, A_n\right\}$ and $\Delta=\left\{B_1, \ldots, B_m\right\}$;
+**Components**
 
-The sequent $S$ is valid, if for every interpretation $\varrho$ where
-$\left|A_1\right|_{\varrho}=\cdots=\left|A_n\right|_{\varrho}=1$ then $\left|B_i\right|_{\varrho}=1$ for some $i$.
+1. **Axioms**: Basic assumptions or self-evident truths.
+2. **Inference Rules**: Procedures for deriving new statements from existing ones (e.g., Modus Ponens, Universal Instantiation).
 
-**Remark:**
-If a sequent is not valid-i.e. falsifiable-then there exists an interpretation $\varrho$ for which $\left|A_1\right|_{\varrho}=\cdots=\left|A_n\right|_{\varrho}=1$, but $\left|B_1\right|_{\varrho} \cdots=\left|B_m\right|_{\varrho}=0$.
+### Sequent Calculus
 
-### Inference rules
+Definition
 
-For the sake of simplicity we write $, \Gamma, A "$ in the following instead of $\Gamma \cup\{A\}$. In the following rules the upper sequent(s) and the lower sequent are called the premise(s) and the conclusion of the rule, respectively.
+Sequent calculus is a logical system for proving the validity of logical statements through sequents. 
 
-![](imgs/sequentcalc.png)
+A **sequent** is an expression of the form:
+$\Gamma \vdash \Delta$
+
+Where $\Gamma$ (the antecedent) and $\Delta$ (the consequent) are sets (or multisets) of formulas). The sequent means “if all formulas in $\Gamma$ are true, then at least on formula in $\Delta$ is true”

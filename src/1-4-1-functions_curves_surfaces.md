@@ -128,20 +128,16 @@ Often it is easier just to stick with the original implicit equation rather than
 
 ### Parametric Representations
 
-Parametric equations are convenient for describing curves in higher-dimensional spaces. For example:
-$$
-\begin{aligned}
-& x=a \cos (t) \\
-& y=a \sin (t) \\
-& z=b t
-\end{aligned}
-$$
-describes a three-dimensional curve, the helix, with a radius of $a$ and rising by $2 \pi b$ units per turn. The equations are identical in the plane to those for a circle. Such expressions as the one above are commonly written as
-$$
-\begin{aligned}
-\mathbf{r}(t) & =(x(t), y(t), z(t)) \\
-& =(a \cos (t), a \sin (t), b t)
-\end{aligned}
-$$
-where $\mathbf{r}$ is a three-dimensional vector.
+Parametric equations are convenient for describing curves and surfaces in higher-dimensional spaces.
 
+A torus with major radius $R$ and minor radius $r$ may be defined parametrically as
+$$
+\begin{aligned}
+& x=\cos (t)(R+r \cos (u)) \\
+& y=\sin (t)(R+r \cos (u)) \\
+& z=r \sin (u)
+\end{aligned}
+$$
+where the two parameters $t$ and $u$ both vary between 0 and $2 \pi$.
+
+![Torus $R = 2, r = 1/2$](https://upload.wikimedia.org/wikipedia/commons/1/17/Torus.png)

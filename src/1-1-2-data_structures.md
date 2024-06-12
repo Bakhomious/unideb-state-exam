@@ -24,7 +24,7 @@ Data structures serve as the basis for **abstract data types**.
 - **Without a structure** &mdash; no relationship between elements of the data structure *(e.g. Set)*.
 - **Associative** &mdash; no essential relationship between elements of the data structure, each element is individually addressable *(e.g. Array)*.
 - **Sequential** &mdash; in a data structure every element –except the first and the last ones– are attainable exactly from another element and from every element exactly one element can be attainable. Only the two highlighted elements are the exceptions, because there is no element of the data structure which the first or the last element would be attainable *(e.g.: Simple List)*.
-- **Hierarchial** &mdash; : in the data structure there is a highlighted element (the root) which giving equals the giving of the data structure. Every element, except the root can be attainable from exactly one other element, but from one element arbitrary (finite) number of additional elements can be attainable. Exceptions to this are the endpoints of the data structure *(e.g.: Binary Tree)*.
+- **Hierarchial** &mdash; in the data structure there is a highlighted element (the root) which giving equals the giving of the data structure. Every element, except the root can be attainable from exactly one other element, but from one element arbitrary (finite) number of additional elements can be attainable. Exceptions to this are the endpoints of the data structure *(e.g.: Binary Tree)*.
 - **Lattice/Net** &mdash; the elements of the data structure can be attainable from several other elements and from a given element more further elements can be attainable *(e.g.: Graph)*.
 
 **3. According to Number of Elements:**
@@ -277,6 +277,8 @@ To search for the key 13 in the tree, we follow the path $15 \rightarrow 6 \righ
 
 #### Insert
 
+Demonstrated in Figure 12
+
 ![BST Insert](imgs/treeinsert.png)
 
 #### Delete
@@ -289,7 +291,7 @@ The overall strategy for deleting a node $z$ from a binary search tree $T$ has t
 
 ![BST Delete cases](imgs/treedelete.png)
 
-Deleting a node $z$ from a binary search tree. Node $z$ may be the root, a left child of node $q$, or a right child of $q$.
+Consider Figure 13. Deleting a node $z$ from a binary search tree. Node $z$ may be the root, a left child of node $q$, or a right child of $q$.
 
 (a) Node $z$ has no left child. We replace $z$ by its right child $r$, which may or may not be NIL.
 

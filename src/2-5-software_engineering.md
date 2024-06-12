@@ -55,7 +55,9 @@ Furthermore, many of these systems deal pretty well with having several remote r
 ### Terms Used to Describe a Malfunction
 
 **Error/mistake**: a human action that produces an incorrect result.
+
 **Defect/fault/bug**: an imperfection or deficiency in a work product where it does not meet its requirements or specifications.
+
 **Failure**: an event in which a component or system does not perform a required function within specified limits.
 
 ### Testing Principles
@@ -70,9 +72,7 @@ Furthermore, many of these systems deal pretty well with having several remote r
 
 ### Test Case
 
-**IEEE**: A set of test inputs, execution conditions, and expected results developed for a particular objective, such as to exercise a particular program path or to verify compliance with a specific requirement.
-**ISTQB**: A set of preconditions, inputs, actions (where applicable), expected results and postconditions, developed based on test conditions.
-   - **Test Condition**: A testable aspect of a component or system identified as a basis for testing.
+A set of test inputs, execution conditions, and expected results developed for a particular objective, such as to exercise a particular program path or to verify compliance with a specific requirement.
 
 - **High-level test case**: A test case with abstract preconditions, input data, expected results, postconditions, and actions (where applicable).
 - **Low-level test case**: A test case with concrete values for preconditions, input data, expected results, postconditions, and a detailed description of actions (where applicable).
@@ -318,7 +318,7 @@ Traditional software development methods tend to create software structures in w
 
 ### Example
 
-![Conventional use of the layers architectural patterns](imgs/dipexample.png)
+![DIP: Conventional use of the layers architectural patterns](imgs/dipexample.png)
 
 A reworked version of the previous model that conforms to the principle:
 
@@ -327,7 +327,7 @@ A reworked version of the previous model that conforms to the principle:
 - Thus, the upper layers do not depend on the lower layers.
 - Notice that the inversion here is not just one of dependencies, it is also one of interface ownership (inversion of ownership).
 
-![Reworked example](imgs/dipreworked.png)
+![DIP: Reworked example](imgs/dipreworked.png)
 
 ----
 
@@ -375,16 +375,6 @@ It was introduced by the Gang of Four.
 
 ### Model-View-Controller (MVC) Architectural Pattern
 
-MVC was conceived by Trygve Reenskaug
-
-**Name**: Model-View-Controller
-
-**Context**: Interactive applications with a flexible human-computer interface.
-
-**Problem**: User interfaces are especially prone to change requests.
-
-**Solution**: Dividing an interactive application into the following components:
-
 - The model component encapsulate core data and functionality, and it is independent of specific output representations or input behavior.
 - View components display information to the user.
 - Controller components receive input, usually as events, that are translated to service requests for the model or the view.
@@ -415,33 +405,17 @@ They deal with the creation of objects.
 
 ##### Builder
 
-**Intent**: “Separate the construction of a complex object from its representation so that the same construction process can create different representations.”
-
-**Known Uses:**
-
-- `java.lang.Appendable`
-- `java.lang.ProcessBuilder`
-- `java.time.format.DateTimeFormatterBuilder`
-- `java.util.Locale.Builder`
-- `java.util.StringJoiner`
-- `java.util.stream.Stream.Builder`
+"Separate the construction of a complex object from its representation so that the same construction process can create different representations."
 
 #### Singleton
 
-**Intent**: Ensure a class only has one instance, and provide a global point of access to it.
-
-**Motivation**: It's important for some classes to have exactly one instance.
+Ensure a class only has one instance, and provide a global point of access to it. It's important for some classes to have exactly one instance.
 
 ![Singleton Structure](imgs/singleton.png)
 
-**Known uses**: 
-
-- `java.lang.Runtime`
-- `java.time.chrono.IsoChronology`
-
 #### Object Pool
 
-**Intent**: Maintains a set of initialized objects rather than creating and destroying them on demand.
+Maintains a set of initialized objects rather than creating and destroying them on demand.
 
 ### Structural Patterns
 
@@ -449,21 +423,11 @@ They deal with how classes and objects are composed to form larger structures.
 
 #### Adapter
 
-**Intent**: "Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces."
-
-**Known Uses**:
-
-- `java.io.InputStreamReader`
-- `java.io.OutputStreamWriter`
-- `jakarta.xml.bind.annotation.adapters.XmlAdapter`
+"Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces."
 
 #### Decorator
 
-**Intent**: "Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality."
-
-- `java.io.InputStream`
-- `java.io.OutputStream`
-- `java.util.Collections#unmodifiableXXX()`
+"Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality."
 
 ### Behavioral Patterns
 
@@ -471,35 +435,15 @@ They characterize the ways in which classes or objects interact and distribute r
 
 #### Iterator
 
-**Intent**: "Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation."
-
-**Known Uses**:
-
-- `java.sql.ResultSet`
-- `java.util.Enumeration`
-- `java.util.Iterator`
+"Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation."
 
 #### Template Method
 
-**Intent**: "Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure."
-
-**Known Uses**:
-
-- `java.io.InputStream`
-- `java.io.OutputStream`
-- `java.util.AbstractList`
-- `java.util.AbstractMap`
-- `java.util.AbstractQueue`
+"Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure."
 
 #### Observer
 
-**Intent**: "Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically."
-
-**Known Uses**:
-
-- `java.util.EventListener`
-- `javafx.beans.Observable`
-- `java.util.concurrent.Flow`
+"Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically."
 
 ----
 
@@ -561,15 +505,6 @@ A software license is a legal instrument that regulates the distribution and use
 - However, they do not limit the use of the software itself.
 - Example: Blender -- It is distributed under the GPLv3. The program can be used for developing non-free software, the license does not apply to the artwork created by the program.
 - In general, the GPL does not apply to the output of a GPL-covered program, unless it includes source code of the program.
-  - This means that, for example, a graphical application can be used without any limitations for any purpose, however, the Autoconf program could not be, if it would not fall under an exception.
-  - Thus, for example, the GPL may apply to the "output" of a computer game when a screenshot is taken or a video is captured.
-- GPL compatible FOSS licenses:
-  - Combinations must be distributed under the GPL.
-  - For example, the following FOSS licenses are GPL compatible:
-    - Apache License 2.0 (is compatible only with the GNU GPL v3)
-    - Three-clause BSD license, two-clause BSD license
-    - Mozilla Public License 2.0
-    - X11 License
 
 ### Weak Copyleft Licenses
 

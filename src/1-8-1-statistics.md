@@ -31,12 +31,13 @@ $$
 $$
 
 Properties of the sample mean
+
 1. $E \bar{X}=\mu$.
 2. $\operatorname{Var}(\bar{X})=\frac{\sigma^2}{n}$.
 3. Weak Law of Large Numbers (WLLN):
-$$
-\lim _{n \rightarrow \infty} P(|\bar{X}-\mu| \geq \epsilon)=0 .
-$$
+   $$
+   \lim _{n \rightarrow \infty} P(|\bar{X}-\mu| \geq \epsilon)=0 .
+   $$
 4. Central Limit Theorem: The random variable
     $$
     Z_n=\frac{\bar{X}-\mu}{\sigma / \sqrt{n}}=\frac{X_1+X_2+\ldots+X_n-n \mu}{\sqrt{n} \sigma}

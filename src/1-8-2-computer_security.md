@@ -22,7 +22,7 @@ The protection afforded to an automated information system in order to attain th
 
 **Availability:** The requirement intended to assure that systems work promptly and service is not denied to authorized users.
 
-#### Further Security Objectives
+### Further Security Objectives
 
 **Accountability:** The requirement that actions of an entity may be traced uniquely to that entity. Accountability is often an organizational policy requirement and directly supports non-repudiation, deterrence, intrusion detection and prevention.
 
@@ -108,19 +108,6 @@ $$
 m=\operatorname{Dec}_{K}(c)
 $$
 
-#### Remarks
-
-- In most cases a random $r$ is also the input of the encryption algorithm, hence the encryption algorithm is randomized.
-- The decryption algorithm is deterministic.
-
-#### Definition
-
-The symmetric encryption scheme $S E=\text{(Key, Enc, Dec)}$ provides correct decryption, if $\forall m \in \mathcal{P}$ and $\forall K \in \mathcal{K}$
-
-$$
-\operatorname{Dec}_{K}\left(\operatorname{Enc} c_{K}(m)\right)=m
-$$
-
 ### Asymmetric Encryption Scheme
 
 #### Definition
@@ -140,20 +127,6 @@ $$
 m=\operatorname{Dec}_{S K}(c)
 $$
 
-#### Remarks
-
-- In most cases a random $r$ is also the input of the encryption algorithm, hence the encryption algorithm is randomized.
-- The decryption algorithm is deterministic.
-- The output of the key-generation algorithm gives the sets $\mathcal{P}, \mathcal{C}, \mathcal{K}$.
-
-#### Definition
-
-The asymmetric encryption scheme $A E=\text{(Key, Enc, Dec)}$ provides correct decryption, if $\forall m \in \mathcal{P}$ and $\forall(P K, S K) \in \mathcal{K}$
-
-$$
-\operatorname{Dec}_{S K}\left(\operatorname{Enc}_{P K}(m)\right)=m
-$$
-
 ----
 
 ## Digital Signature
@@ -169,7 +142,7 @@ Properties:
 
 ### Definition
 
-A signature scheme is a.tuple of three algorithms $D S=(\text{Key, Sign, Ver)}$ satisfying the following:
+A signature scheme is a tuple of three algorithms $D S=(\text{Key, Sign, Ver)}$ satisfying the following:
 
 - Key: The key-generation algorithm Key takes as input a security parameter $k$ and outputs a pair of keys ($PK$,$SK$). These are called the public key and the secret key, respectively.
 - Sign: The signing algorithm Sign takes as input a secret key SK and a message $m \in\{0,1\}^{*}$. It outputs signature $s=\operatorname{Sign}_{S K}(m)$.
@@ -211,10 +184,10 @@ Typically, a cryptographic hash function $H: X \rightarrow Y$ has three properti
 Asymmetric encryption scheme: $A E=($ Key, Enc, Dec $)$
 
 - Key:
-  - Randomly choose two large primes: $p, q$.
+  - Randomly choose two large primes: $p, q$. (Using Miller-Rabin for example)
   - Calculate RSA modulus: $n=p \cdot q$.
   - Calculate Euler totient: $\phi(n)=(p-1)(q-1)$.
-  - Randomly choose an integer $e$ : $1<e<\phi(n)$ and $(e, \phi(n))=1$. (e is the encryption exponent)
+  - Randomly choose an integer $e$ : $1<e<\phi(n)$ and $\operatorname{GCD}(e, \phi(n))=1$. (e is the encryption exponent)
   - Calculate $d: 1<d<\phi(n)$ and $e d \equiv 1(\bmod \phi(n))$. (d is the decryption exponent)
 
     $P K=(n, e), S K=d$ and $\phi(n), p, q$ are secret parameters $\mathcal{P}=\mathcal{C}=\mathbb{Z}_n$
