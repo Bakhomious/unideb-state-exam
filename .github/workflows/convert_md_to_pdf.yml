@@ -19,11 +19,7 @@ jobs:
       - name: Set up dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc
-          curl --proto '=https' --tlsv1.2 -sSf https://tectonic.new/packages.txt | grep '^deb ' | sudo tee /etc/apt/sources.list.d/tectonic.list
-          sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0x3DBDC2845399DF16
-          sudo apt-get update
-          sudo apt-get install -y tectonic
+          sudo apt-get install -y pandoc pandoc-citeproc texlive-latex-recommended texlive-latex-extra texlive-xetex texlive-luatex
 
       - name: Run conversion script
         run: |
