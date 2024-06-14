@@ -29,11 +29,14 @@ jobs:
 
       - name: Commit PDF files
         run: |
+          cd $GITHUB_WORKSPACE/src
+          mkdir -p ../pdfs  # Ensure the destination directory exists
+          mv *.pdf ../pdfs/  # Move all PDF files to the ../pdfs directory
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add ../pdfs/*.pdf
           git commit -m "Add converted PDF files"
-      
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
