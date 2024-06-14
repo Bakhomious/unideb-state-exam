@@ -26,3 +26,15 @@ jobs:
           cd src
           chmod +x convert_md_to_pdf.sh
           ./convert_md_to_pdf.sh
+
+      - name: Commit PDF files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ../pdfs/*.pdf
+          git commit -m "Add converted PDF files"
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
