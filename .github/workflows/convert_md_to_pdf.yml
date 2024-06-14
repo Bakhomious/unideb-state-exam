@@ -14,14 +14,15 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.7
-      
-      - name: Set up Pandoc
+        uses: actions/checkout@v4
+
+      - name: Set up dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc
+          sudo apt-get install -y pandoc texlive-latex-base
 
       - name: Run conversion script
         run: |
-          chmod +x src/convert_md_to_pdf.sh
-          src/convert_md_to_pdf.sh
+          cd src
+          chmod +x convert_md_to_pdf.sh
+          ./convert_md_to_pdf.sh
