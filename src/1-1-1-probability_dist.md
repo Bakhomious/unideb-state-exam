@@ -103,7 +103,7 @@ $$
 P_X(k)=\binom{n}{k} p^k(1-p)^{n-k}, \text { for } k=0,1,2, \ldots, n
 $$
 
-![Binomial Distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Binomial_distribution_pmf.svg/300px-Binomial_distribution_pmf.svg.png)
+![Binomial Distribution](imgs/Binomial_distribution_pmf.svg.png)
 
 ### Definition
 
@@ -136,7 +136,7 @@ $$
 P_{X}(k)= \begin{cases}\frac{e^{-\lambda} \lambda^{k}}{k !} & \text { for } k \in R_{X} \\ 0 & \text { otherwise }\end{cases}
 $$
 
-![Poisson Distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Poisson_distribution_PMF.png/640px-Poisson_distribution_PMF.png)
+![Poisson Distribution](imgs/640px-Poisson_distribution_PMF.png)
 
 ### Expectation
 
@@ -158,7 +158,7 @@ $$
 f_{X}(x)= \begin{cases}\frac{1}{b-a} & a<x<b \\ 0 & x<a \text { or } x>b\end{cases}
 $$
 
-![Uniform Distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Uniform_Distribution_PDF_SVG.svg/640px-Uniform_Distribution_PDF_SVG.svg.png)
+![Uniform Distribution](imgs/640px-Uniform_Distribution_PDF_SVG.svg.png)
 
 ### Expectation
 
@@ -182,7 +182,7 @@ $$
 f_{X}(x)= \begin{cases}\lambda e^{-\lambda x} & x>0 \\ 0 & \text { otherwise }\end{cases}
 $$
 
-![Exponential Distribution](https://www.probabilitycourse.com/images/chapter4/PDF-Exp_b.png)
+![Exponential Distribution](imgs/PDF-Exp_b.png)
 
 ### Expectation
 
@@ -206,7 +206,7 @@ $$
 f_{X}(x)= \frac{1}{\sigma \sqrt{2 \pi}} \exp \left\{-\frac{(x-\mu)^{2}}{2 \sigma^{2}}\right\}
 $$
 
-![PDF of the standard normal random variable](https://cdn.mathpix.com/cropped/2023_01_07_73c4fd5ec57186ac775cg-16.jpg?height=716&width=1155&top_left_y=1309&top_left_x=412)
+![PDF of the standard normal random variable](imgs/2023_01_07_73c4fd5ec57186ac775cg-16.jpg)
 
 ### Expectation
 
