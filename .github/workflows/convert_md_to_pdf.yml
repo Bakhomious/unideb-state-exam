@@ -2,8 +2,8 @@ name: Convert Markdown to PDF
 
 on:
   push:
-    paths:
-      - 'src/**/*.md'
+    branches:
+      - '**'
   pull_request:
     paths:
       - 'src/**/*.md'
@@ -14,14 +14,27 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.7
-      
-      - name: Set up Pandoc
+        uses: actions/checkout@v4
+
+      - name: Set up dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc
+          sudo apt-get install -y pandoc pandoc-citeproc texlive-latex-recommended texlive-latex-extra texlive-xetex texlive-luatex
 
       - name: Run conversion script
         run: |
-          chmod +x src/convert_md_to_pdf.sh
-          src/convert_md_to_pdf.sh
+          cd src
+          chmod +x convert_md_to_pdf.sh
+          ./convert_md_to_pdf.sh
+
+      - name: Commit PDF files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Add converted PDF files"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
