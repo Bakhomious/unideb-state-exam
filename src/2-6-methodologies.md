@@ -30,7 +30,7 @@ Can be summarized in the following points:
 
 The V-model is a model in which the process executes sequentially in a V-shape. It is also known as the Verification and Validation model. It is based on the association of a testing phase for each corresponding development stage. The development of each step is directly associated with the testing phase. The next phase starts only after completion of the previous phase i.e., for each development activity, there is a testing activity corresponding to it.
 
-![V Model](https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/1_v-model.png)
+![V Model](./imgs/v_model.png)
 
 ### Requirement Gathering $\longleftrightarrow$ Acceptance Testing
 
@@ -80,7 +80,7 @@ Then in the subsequent spirals with higher clarity on requirements and design de
 
 Risk Analysis includes identifying, estimating and monitoring the technical feasibility and management risks, such as schedule slippage and cost overrun. After testing the build, at the end of first iteration, the customer evaluates the software and provides feedback.
 
-![Spiral Model](https://www.tutorialspoint.com/sdlc/images/sdlc_spiral_model.jpg)
+![Spiral Model](./imgs/sdlc_spiral_model.jpg)
 
 ## Prototyping Model
 

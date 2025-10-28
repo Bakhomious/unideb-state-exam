@@ -140,4 +140,4 @@ $$
 $$
 where the two parameters $t$ and $u$ both vary between 0 and $2 \pi$.
 
-![Torus $R = 2, r = 1/2$](https://upload.wikimedia.org/wikipedia/commons/1/17/Torus.png)
+![Torus $R = 2, r = 1/2$](./imgs/Torus.png  )
