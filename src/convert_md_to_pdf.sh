@@ -19,5 +19,5 @@ for mdFile in "${mdFiles[@]}"; do
     echo "Converting $mdFilePath to $pdfFilePath"
     
     # Execute the pandoc command
-    pandoc "$mdFile" -o "$pdfFilePath --pdf-engine=xelatex"
+    pandoc --pdf-engine=xelatex "$mdFile" -o "$pdfFilePath"
 done
