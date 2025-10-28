@@ -1,6 +1,6 @@
 # State Exam Notes for University of Debrecen Students
 
-- For the useful notes, use the rendered pdf files (auto generated).
+- PDF notes are available here: https://bakhomious.github.io/unideb-state-exam/
 - Feel free to update using pull requests (use the markdown files).
 - Please try to use and add any images used under the `src/imgs` directory, prevent from using online links and use either `.png` or `.jpg` format to avoid conflicts. 
 
